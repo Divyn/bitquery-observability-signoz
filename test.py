@@ -113,7 +113,7 @@ async def main():
                     async for result in transport.subscribe(query):
                         
                         _last_msg_time = time.time()
-                        entries = result.get("Trading", {}).get("Tokens", [])
+                        entries = result.data.get("Trading", {}).get("Tokens", [])
                         num_entries = len(entries)
 
                         # Add number of entries to the counter
