@@ -1,1 +1,1 @@
-# signoz-bitquery
+# Bitquery Price Feed APIs with Monitor
