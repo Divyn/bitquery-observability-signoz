@@ -20,11 +20,11 @@ meter = metrics.get_meter("bitquery.stream.client")
 message_count = meter.create_counter("bitquery.messages", description="Messages received from Bitquery stream")
 error_count = meter.create_counter("bitquery.errors", description="Errors in Bitquery stream subscription")
 connection_count = meter.create_counter("bitquery.connections", description="Successful connections to Bitquery stream")
-last_message_time = meter.create_observable_gauge(
-    name="bitquery.last_message_unix",
-    callbacks=[],
-    description="Last received message timestamp (epoch seconds)"
-)
+# last_message_time = meter.create_observable_gauge(
+#     name="bitquery.last_message_unix",
+#     callbacks=[],
+#     description="Last received message timestamp (epoch seconds)"
+# )
 
 # Internal tracker for last message time
 _last_msg_time = time.time()
@@ -119,10 +119,10 @@ async def main():
                     print(" Subscription error:", e)
                     error_count.add(1)
 
-            def update_last_msg_time(observer):
-                observer.observe(_last_msg_time)
+            # def update_last_msg_time(observer):
+            #     observer.observe(_last_msg_time)
 
-            last_message_time._callbacks.append(update_last_msg_time)
+            # last_message_time._callbacks.append(update_last_msg_time)
 
             await subscribe_and_print()
 
