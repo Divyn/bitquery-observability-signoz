@@ -1,0 +1,32 @@
+receivers:
+  httpcheck:
+    targets:
+      - endpoint: https://streaming.bitquery.io/eap
+        method: GET
+        # expected_status_codes: [204]
+    collection_interval: 10s
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+    
+
+exporters:
+  otlp:
+    endpoint: "your endpoint"
+    tls:
+      insecure: false
+    headers:
+      "signoz-ingestion-key": "your key"
+
+processors:
+  batch:
+
+service:
+  pipelines:
+    metrics:
+      receivers: [httpcheck, otlp]
+      processors: [batch]
+      exporters: [otlp]
