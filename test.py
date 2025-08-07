@@ -111,8 +111,14 @@ async def main():
                 global _last_msg_time
                 try:
                     async for result in transport.subscribe(query):
-                        message_count.add(1)
+                        
                         _last_msg_time = time.time()
+                        entries = result.get("Trading", {}).get("Tokens", [])
+                        num_entries = len(entries)
+
+                        # Add number of entries to the counter
+                        message_count.add(num_entries)
+
                         if shutdown_event.is_set():
                             break
                 except Exception as e:

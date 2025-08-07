@@ -26,3 +26,8 @@ pip install opentelemetry-sdk opentelemetry-exporter-otlp opentelemetry-api gql
 ```
 python3 test.py
 ```
+
+
+```
+lsof -i :4317
+```
