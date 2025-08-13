@@ -30,4 +30,5 @@ python3 test.py
 
 ```
 lsof -i :4317
+kill -9 PID
 ```
