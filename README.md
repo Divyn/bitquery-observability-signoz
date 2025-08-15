@@ -8,7 +8,7 @@ A detailed breakdown of how this works is described in this [tutorial](https://d
 
 - **Python 3.7+** (Python 3.8+ recommended)
 - **macOS/Linux** (tested on macOS 24.6.0)
-- **Bitquery API Token** - Get your token from [Bitquery](https://bitquery.io/)
+- **Bitquery API Token** - Get your token from [Bitquery](https://bitquery.io/). The free developer plan is enough to test.
 
 ## Installation
 
