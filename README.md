@@ -16,7 +16,7 @@ A detailed breakdown of how this works is described in this [tutorial](https://d
 
 ```bash
 git clone https://github.com/Divyn/bitquery-observability-signoz.git
-cd signoz-bitquery
+cd bitquery-observability-signoz
 ```
 
 ### 2. Install Python Dependencies
