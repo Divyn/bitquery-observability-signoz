@@ -1,6 +1,6 @@
-# List of Commmands and Other Notes
+# List of Commands
 
-## Installation
+## OpenTelemetry Installation
 
 ```
 curl -LO https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.116.0/otelcol-contrib_0.116.0_darwin_amd64.tar.gz
@@ -10,7 +10,7 @@ tar -xvzf otelcol-contrib_0.116.0_darwin_amd64.tar.gz -C otelcol-contrib
 
 ```
 
-## Running
+## Running The OTel Monitor
 
 ```
 ./otelcol-contrib --config ./config.yaml
@@ -19,15 +19,10 @@ tar -xvzf otelcol-contrib_0.116.0_darwin_amd64.tar.gz -C otelcol-contrib
 ## Python Stream Test
 
 ```
-pip install opentelemetry-sdk opentelemetry-exporter-otlp opentelemetry-api gql
-
+python3 sub_test.py
 ```
 
-```
-python3 test.py
-```
-
-
+## End OTel Process if Running Post Monitoring
 ```
 lsof -i :4317
 kill -9 PID
